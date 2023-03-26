@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     <div>
-                        <select name="status" class="status">
+                        <select name="status" class="status" @change="updateBurguer($event, burguer.id)">
                             <option value="" disabled>Selecione</option>
                             <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burguer.status == s.tipo">
                                 {{ s.tipo }}
@@ -52,7 +52,7 @@ export default {
         async getPedidos() {
 
             const req = await fetch("http://localhost:3000/burgers")
-            
+
             const data = await req.json()
 
             this.burguers = data;
@@ -78,73 +78,89 @@ export default {
             // msg
 
             this.getPedidos()
+        },
+        async updateBurguer(event, id) {
+
+            // atualizar status no pedido
+
+            const option = event.target.value;
+
+            const dataJson = JSON.stringify({ status: option });
+
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: dataJson
+            })
+
+            const res = await req.json()
+
+            console.log(res)
         }
     },
     mounted() {
         this.getPedidos();
 
-        
+
     }
 }
 
 </script>
 
 <style scoped>
+#burguer-table {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    #burguer-table {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+#burguer-table-heading,
+#burguer-table-rows,
+.burguer-table-row {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    #burguer-table-heading,
-    #burguer-table-rows,
-    .burguer-table-row {
-        display: flex;
-        flex-wrap: wrap;
-    }
+#burguer-table-heading {
+    font-weight: bold;
+    padding: 12px;
+    border-bottom: 3px solid #333;
+}
 
-    #burguer-table-heading {
-        font-weight: bold;
-        padding: 12px;
-        border-bottom: 3px solid #333;
-    }
+#burguer-table-heading div,
+.burguer-table-row div {
+    width: 19%;
+}
 
-    #burguer-table-heading div,
-    .burguer-table-row div {
-        width: 19%;
-    }
+.burguer-table-row {
+    width: 100%;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
 
-    .burguer-table-row {
-        width: 100%;
-        padding: 12px;
-        border-bottom: 1px solid #ccc;
-    }
+#burguer-table-heading .order-id,
+.burguer-table-row .order-number {
+    width: 5%;
+}
 
-    #burguer-table-heading .order-id,
-    .burguer-table-row .order-number {
-        width: 5%;
-    }
+select {
+    padding: 12px 6px;
+    margin-right: 12px;
+}
 
-    select {
-        padding: 12px 6px;
-        margin-right: 12px;
-    }
+.delete-btn {
+    background-color: #222;
+    color: #fcba03;
+    font-weight: bold;
+    border: 2px solid #222;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .5s;
+}
 
-    .delete-btn {
-        background-color: #222;
-        color: #fcba03;
-        font-weight: bold;
-        border: 2px solid #222;
-        padding: 10px;
-        font-size: 16px;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: .5s;
-    }
-
-    .delete-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-
+.delete-btn:hover {
+    background-color: transparent;
+    color: #222;
+}
 </style>
