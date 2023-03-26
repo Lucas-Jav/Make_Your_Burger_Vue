@@ -124,6 +124,28 @@
       ],
       "status": "Solicitado",
       "id": 4
+    },
+    {
+      "nome": "Lucas Henrique oliveira de Amorim",
+      "carne": "Veggie burger",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Cebola roxa",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 5
+    },
+    {
+      "nome": "Lucas Henrique oliveira de Amorim",
+      "carne": "Maminha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 6
     }
   ]
 }

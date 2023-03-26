@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>componente de mensagem</p>
+        <Message :msg="msg" v-show="msg" />
         <div>
             <form id="burger-form" @submit="createBurger">
                 <div class="input-container">
@@ -37,8 +37,13 @@
 </template>
 
 <script>
+import Message from './Message.vue'
+
 export default {
     name: 'BurgerForm',
+    components: {
+        Message
+    },
     data() {
         return {
             paes: null,
@@ -53,6 +58,7 @@ export default {
     },
     methods: {
         async getIngredientes() {
+            // faz um get dos ingredientes
             const req = await fetch('http://localhost:3000/ingredientes');
             const data = await req.json();
 
@@ -62,7 +68,9 @@ export default {
         },
         async createBurger(e) {
             e.preventDefault()
-            
+
+
+            // envia para o banco de dados o pedido
             const data = {
                 nome: this.nome,
                 carne: this.carne,
@@ -80,8 +88,14 @@ export default {
             })
 
             const res = await req.json()
-            
+
             // colocar uma msg de sistema
+            this.msg = `Pedido Nº ${res.id} realizado com sucesso`
+
+            // limpar msg
+            setTimeout(() => {
+                this.msg = null
+            }, 3000)
 
             // limpar os campos
             this.nome = "";
@@ -97,71 +111,71 @@ export default {
 </script>
 
 <style scoped>
-    #burger-form {
-        max-width: 400px;
-        margin: 0 auto;
-    }
+#burger-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
 
-    .input-container {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
 
-    label {
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #222;
-        padding: 5px 10px;
-        border-left: 4px solid #fcba03;
-    }
+label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;
+    padding: 5px 10px;
+    border-left: 4px solid #fcba03;
+}
 
-    input, select {
-        padding: 5px 10px;
-        width: 300px; 
-    }
+input,
+select {
+    padding: 5px 10px;
+    width: 300px;
+}
 
-    #opcionais-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+#opcionais-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
-    #opcionais-title {
-        width: 100%;
-    }
+#opcionais-title {
+    width: 100%;
+}
 
-    .checkbox-container {
-        display: flex;
-        align-items: flex-start;
-        width: 50%;
-        margin-bottom: 20px;
-    }
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+    margin-bottom: 20px;
+}
 
-    .checkbox-container span,
-    .checkbox-container input {
-        width: auto;
-    }
+.checkbox-container span,
+.checkbox-container input {
+    width: auto;
+}
 
-    .checkbox-container span {
-        margin-left: 6px;
-        font-weight: bold;
-    }
+.checkbox-container span {
+    margin-left: 6px;
+    font-weight: bold;
+}
 
-    .submit-btn {
-        background-color: #222;
-        color: #fcba03;
-        font-weight: bold;
-        border: 2px solid #222;
-        padding: 10px;
-        font-size: 16px;
-        margin: 0 auto;
-        cursor: pointer;
-        transition:  .5s;
-    }
+.submit-btn {
+    background-color: #222;
+    color: #fcba03;
+    font-weight: bold;
+    border: 2px solid #222;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .5s;
+}
 
-    .submit-btn:hover {
-        background-color: transparent;
-        color: #222;
-    }
-
+.submit-btn:hover {
+    background-color: transparent;
+    color: #222;
+}
 </style>
