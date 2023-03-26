@@ -81,12 +81,11 @@
   ],
   "burgers": [
     {
-      "nome": "Funerária PH",
-      "carne": "Alcatra",
-      "pao": "Italiano Branco",
+      "nome": "Lucas Henrique oliveira de Amorim",
+      "carne": "Maminha",
+      "pao": "3 Queijos",
       "opcionais": [
         "Bacon",
-        "Salame",
         "Cebola roxa",
         "Tomate"
       ],
@@ -94,56 +93,37 @@
       "id": 1
     },
     {
-      "nome": "Lucas Henrique oliveira de Amorim",
+      "nome": "naty",
       "carne": "Picanha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Tomate"
-      ],
-      "status": "Em produção",
+      "pao": "Italiano Branco",
+      "opcionais": [],
+      "status": "Solicitado",
       "id": 2
     },
     {
-      "nome": "luabn",
-      "carne": "Alcatra",
+      "nome": "kevim",
+      "carne": "Veggie burger",
       "pao": "Parmesão e Orégano",
       "opcionais": [
-        "Bacon",
-        "Salame",
         "Cebola roxa",
-        "Pepino"
+        "Pepino",
+        "Cheddar"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 3
     },
     {
-      "nome": "laun",
+      "nome": "gabi",
       "carne": "Veggie burger",
       "pao": "Integral",
-      "opcionais": [],
-      "status": "Solicitado",
-      "id": 4
-    },
-    {
-      "nome": "aaaaaain",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [],
-      "status": "Solicitado",
-      "id": 5
-    },
-    {
-      "nome": "mateus",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
       "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
+        "Cebola roxa",
+        "Cheddar",
+        "Tomate",
+        "Pepino"
       ],
       "status": "Solicitado",
-      "id": 6
+      "id": 4
     }
   ]
 }
