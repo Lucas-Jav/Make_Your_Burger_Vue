@@ -79,12 +79,13 @@
   ],
   "burgers": [
     {
-      "nome": "lucas",
-      "carne": "Picanha",
+      "nome": "Funerária PH",
+      "carne": "Alcatra",
       "pao": "Italiano Branco",
       "opcionais": [
         "Bacon",
-        "Cheddar",
+        "Salame",
+        "Cebola roxa",
         "Tomate"
       ],
       "status": "Solicitado",
@@ -92,75 +93,55 @@
     },
     {
       "nome": "Lucas Henrique oliveira de Amorim",
-      "carne": "Alcatra",
+      "carne": "Picanha",
       "pao": "3 Queijos",
       "opcionais": [
-        "Cebola roxa",
-        "Pepino"
+        "Bacon",
+        "Tomate"
       ],
       "status": "Solicitado",
       "id": 2
     },
     {
-      "nome": "Lucas Henrique oliveira de Amorim",
+      "nome": "luabn",
       "carne": "Alcatra",
       "pao": "Parmesão e Orégano",
       "opcionais": [
         "Bacon",
         "Salame",
-        "Tomate"
+        "Cebola roxa",
+        "Pepino"
       ],
       "status": "Solicitado",
       "id": 3
     },
     {
-      "nome": "Funerária PH",
+      "nome": "laun",
       "carne": "Veggie burger",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Salame",
-        "Pepino",
-        "Tomate"
-      ],
+      "pao": "Integral",
+      "opcionais": [],
       "status": "Solicitado",
       "id": 4
     },
     {
-      "nome": "Lucas Henrique oliveira de Amorim",
-      "carne": "Veggie burger",
+      "nome": "aaaaaain",
+      "carne": "Alcatra",
       "pao": "3 Queijos",
-      "opcionais": [
-        "Cebola roxa",
-        "Cheddar"
-      ],
+      "opcionais": [],
       "status": "Solicitado",
       "id": 5
     },
     {
-      "nome": "Lucas Henrique oliveira de Amorim",
+      "nome": "mateus",
       "carne": "Maminha",
       "pao": "3 Queijos",
       "opcionais": [
         "Bacon",
-        "Salame"
+        "Salame",
+        "Cebola roxa"
       ],
       "status": "Solicitado",
       "id": 6
-    },
-    {
-      "nome": "markinhos",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa",
-        "Cheddar",
-        "Tomate",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 7
     }
   ]
 }
