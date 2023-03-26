@@ -146,6 +146,21 @@
       ],
       "status": "Solicitado",
       "id": 6
+    },
+    {
+      "nome": "markinhos",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cebola roxa",
+        "Cheddar",
+        "Tomate",
+        "Pepino"
+      ],
+      "status": "Solicitado",
+      "id": 7
     }
   ]
 }
