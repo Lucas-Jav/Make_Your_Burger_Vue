@@ -79,8 +79,6 @@ export default {
                 method: "DELETE"
             })
 
-            const res = await req.json();
-
             // colocar uma msg do sistema
             this.msg = `Pedido removido com sucesso!`
 
